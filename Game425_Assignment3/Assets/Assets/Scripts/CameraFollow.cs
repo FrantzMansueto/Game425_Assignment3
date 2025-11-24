@@ -69,7 +69,14 @@ public class CameraFollow : MonoBehaviour
  {
   if (target == null) return;
   
-  Vector3 idealPosition = target.position + offset.normalized * currentZoom;
+  //Vector3 idealPosition = target.position + offset.normalized * currentZoom;
+  
+  // Convert offset into hDist and vDist as per course pseudocode
+  float hDist = offset.z; //distance behind the target need to check
+  float vDist = offset.y; // vertical distance above the target need to check
+ 
+  //Pseudocode: ideal = pos - forwardhDist + upvDist
+  Vector3 idealPosition = target.position - target.forward * hDist * currentZoom + target.up * vDist * currentZoom; // better check
   
   Vector3 displacement = actualPosition - idealPosition; //correct displacement: actual - ideal
   

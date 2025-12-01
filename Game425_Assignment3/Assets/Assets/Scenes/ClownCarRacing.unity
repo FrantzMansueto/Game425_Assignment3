@@ -4431,43 +4431,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7211637597200131762, guid: 64190aed95de8bc48aeed31299159841, type: 3}
---- !u!84 &249357167
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 257
-  m_Height: 257
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1001 &252140782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7142,7 +7105,7 @@ Transform:
   - {fileID: 398582961}
   - {fileID: 416244378}
   m_Father: {fileID: 729894248}
-  m_RootOrder: 37
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &382497355 stripped
 GameObject:
@@ -11869,7 +11832,7 @@ Transform:
   - {fileID: 643392777}
   - {fileID: 51056174}
   m_Father: {fileID: 729894248}
-  m_RootOrder: 49
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &648625676
 PrefabInstance:
@@ -13649,6 +13612,7 @@ Transform:
   - {fileID: 1487675387}
   - {fileID: 2138196000}
   - {fileID: 1836745485}
+  - {fileID: 381686054}
   - {fileID: 1109511435}
   - {fileID: 687931427}
   - {fileID: 189965436}
@@ -13656,10 +13620,10 @@ Transform:
   - {fileID: 593610626}
   - {fileID: 1478018680}
   - {fileID: 610518425}
-  - {fileID: 381686054}
   - {fileID: 681794570}
   - {fileID: 231089224}
   - {fileID: 1952127922}
+  - {fileID: 648139015}
   - {fileID: 930874529}
   - {fileID: 1508823917}
   - {fileID: 597893030}
@@ -13668,7 +13632,6 @@ Transform:
   - {fileID: 1846245299}
   - {fileID: 1153894540}
   - {fileID: 1000021611}
-  - {fileID: 648139015}
   - {fileID: 1587127398}
   - {fileID: 959126232}
   - {fileID: 763168685}
@@ -14398,6 +14361,43 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7211637597200131762, guid: 64190aed95de8bc48aeed31299159841, type: 3}
+--- !u!84 &775342256
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 257
+  m_Height: 257
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &782318146 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 27c37e51ee62ebe408131fff7cebd6fc, type: 3}
@@ -22972,7 +22972,7 @@ PrefabInstance:
     - target: {fileID: 2057960, guid: 98e2b8a7d6de642f8ae08a3cbb957b7a, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 249357167}
+      objectReference: {fileID: 775342256}
     - target: {fileID: 2057960, guid: 98e2b8a7d6de642f8ae08a3cbb957b7a, type: 3}
       propertyPath: orthographic size
       value: 53.07
@@ -24445,7 +24445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58872a27ef6984f4a87a42b1a4a5f39e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 6889810899534214473}
   offset: {x: 10, y: 4, z: 0}
   springConstant: 50
   dampConstant: 10

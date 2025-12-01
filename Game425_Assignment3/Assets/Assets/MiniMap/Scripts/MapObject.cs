@@ -44,14 +44,55 @@ public class MapObject : MonoBehaviour
 		rt = panelGO.GetComponent<RectTransform> ();
 		mmc = controller;
 		miniMapTarget = mmc.target;
+		//moved outside of function to avoid flickering icons.
+		transform.SetParent (panelGO.transform, false);
 		SetTransform ();
 	}
 
 	// TODO: Implement transformation of registered map icons in MiniMap space
 	void SetTransform()
 	{
-		transform.SetParent (panelGO.transform, false);
+		Vector2 localPos;
+		if (owner.transform == miniMapTarget)
+		{
+			localPos = Vector2.zero;
+		}
+		else
+		{
+			Vector3 offset = owner.transform.position - miniMapTarget.position;
+			if (mmc.rotateWithTarget)
+			{
+				offset = Quaternion.Inverse(miniMapTarget.rotation) * offset;
+			}
+			float scale = rt.sizeDelta.x / (mapCamera.orthographicSize * 2f);
+			localPos = new Vector2(offset.x * scale, offset.z * scale);
+			if (linkedMiniMapEntity.clampInBorder)
+			{
+				Vector2 halfSize = rt.sizeDelta / 2f;
+				localPos.x = Mathf.Clamp(localPos.x, -halfSize.x, halfSize.x);
+				localPos.y = Mathf.Clamp(localPos.y, -halfSize.y, halfSize.y);
+			}
+			if (linkedMiniMapEntity.clampDist > 0 &&
+			    offset.magnitude > linkedMiniMapEntity.clampDist)
+			{
+				spr.enabled = false;
+				return;
+			}
+			else
+			{
+				spr.enabled = true;
+			}
+		}
 
+		sprRect.anchoredPosition = localPos;
+		if (linkedMiniMapEntity.rotateWithObject)
+		{
+			sprRect.rotation = Quaternion.Euler(0, 0, owner.transform.eulerAngles.z);
+		}
+		else
+		{
+			sprRect.rotation = Quaternion.identity;
+		}
 		// Some useful variables (see definitions in project and in Unity docs):
         //
 		//   sprRect.anchoredPosition

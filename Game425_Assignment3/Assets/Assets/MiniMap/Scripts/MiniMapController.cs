@@ -169,6 +169,7 @@ public class MiniMapController : MonoBehaviour
 
 		ownerIconMap.Add (owner, curMGO);
 
-		return owner.GetComponent<MapObject>();
+		//return owner.GetComponent<MapObject>();
+		return curMO;
 	}
 }
